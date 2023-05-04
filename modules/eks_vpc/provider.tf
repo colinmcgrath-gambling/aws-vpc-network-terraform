@@ -9,7 +9,9 @@ terraform {
 
 provider "aws" {
   region = var.region_name
-
+  assume_role {
+    role_arn = "arn:aws:iam::799184738206:role/OrganizationAccountAccessRole"
+  }
   default_tags {
     tags = {
       "Application" = "EKS-Cluster"
